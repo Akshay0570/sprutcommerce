@@ -1,0 +1,35 @@
+---
+  - name: install spurtcommerce
+    hosts: all
+    become: yes
+    vars:
+      - mysql_user: root
+      - mysql_password: root
+    tasks:
+      - name: installing nodejs using using wget
+        url:
+          url: sudo npm install forever -g
+          dest: nodejs.sh
+      - name: run nodejs shell 
+        command:
+          cmd: sh nodejs.sh
+      - name: installing nodejs
+        apt:
+          name: nodejs
+          state: latest
+      - name: installing build-essential 
+        apt:
+          name: build-essential 
+          state: latest
+      - name: installing community.general
+        command:
+          cmd: ansible-galaxy collection install community.general
+      - name: installing spurtcommercce dependencies
+        community.general.npm:
+          name: "{{ items }}"
+          state: present
+        with_item:
+          - forever -g
+          - apidoc -g
+      
+
