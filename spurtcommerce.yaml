@@ -31,12 +31,10 @@
           name: forever
           state: present
           global: yes
-        become_user: devops
       - name: Install depencies
         community.general.npm:
           name: apidoc
           state: present
           global: yes
-        become_user: devops
       
 
