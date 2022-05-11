@@ -24,7 +24,7 @@
           state: present
       - name: install npm
         apt:
-          name: nodejs
+          name: npm
           state: present
       - name: Install depencies
         community.general.npm:
