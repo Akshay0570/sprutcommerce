@@ -22,6 +22,10 @@
         apt:
           name: nodejs
           state: present
+      - name: install npm
+        apt:
+          name: nodejs
+          state: present
       - name: Install depencies
         community.general.npm:
           name: forever -g
