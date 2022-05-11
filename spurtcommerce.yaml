@@ -57,9 +57,9 @@
         apt:
           name: mysql-server
           state: present
-      - name: switch to mysql root user
-        command:
-          cmd: sudo mysql -u root
+      #- name: switch to mysql root user
+       # command:
+        #  cmd: sudo mysql -u root
       - name: select root user and set password and give privillages
         community.mysql.mysql_user:
           name: "{{ mysql_user }}"
