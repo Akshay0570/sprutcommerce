@@ -43,3 +43,11 @@
         apt:
           name: apache2
           state: latest
+      - name: Enable a2enmode proxy
+        community.general.apache2_module:
+          state: present
+          name: 
+            - proxy
+            - proxy_http
+            - headers
+      
