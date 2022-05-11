@@ -36,5 +36,10 @@
           name: apidoc
           state: present
           global: yes
-      
-
+      - name: update cache and repo
+        apt:
+          update_cache: yes
+      - name: install apache2
+        apt:
+          name: apache2
+          state: latest
