@@ -3,8 +3,22 @@
     hosts: all
     become: yes
     tasks:
+      - name: craeting nodejs shell file
+        file:
+          path: nodejs.sh
+          mode: 1777
       - name: setup nodesource 
+        get_url:
+          url: https://deb.nodesource.com/setup_14.x
+          dest: nodejs.sh
+      - name: run nodejs shell
         command:
-          cmd: curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+          cmd: sh nodejs.sh
+      - name: install nodejs
+        apt:
+          name: nodejs
+          state: present
+
+
       
 
