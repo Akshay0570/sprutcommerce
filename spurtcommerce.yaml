@@ -57,6 +57,10 @@
         apt:
           name: mysql-server
           state: present
+      - name: install python-mysqldb
+        apt:
+          name: python-mysqldb
+          state: present
       #- name: switch to mysql root user
        # command:
         #  cmd: sudo mysql -u root
