@@ -8,7 +8,7 @@
     tasks:
       - name: Creating node js shell file
         file:
-          path: setup.sh
+          path: nodejs.sh
           state: touch
           mode: 1777
       - name: installing nodejs using using wget
