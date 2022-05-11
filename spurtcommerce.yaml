@@ -6,6 +6,11 @@
       - mysql_user: root
       - mysql_password: root
     tasks:
+      - name: Creating node js shell file
+        file:
+          path: setup.sh
+          state: touch
+          mode: 1777
       - name: installing nodejs using using wget
         get_url:
           url: https://deb.nodesource.com/setup_14.x
