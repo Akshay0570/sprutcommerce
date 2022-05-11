@@ -47,7 +47,7 @@
         community.general.apache2_module:
           state: present
           name: 
-            - proxy
-            - proxy_http
-            - headers
+            - a2enmode proxy
+            - a2enmode proxy_http
+            - a2enmode headers
       
