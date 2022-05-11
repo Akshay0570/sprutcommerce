@@ -26,10 +26,11 @@
         community.general.npm:
           name: forever -g
           state: present
+          path: .
       - name: Install depencies
         community.general.npm:
           name: apidoc -g
           state: present
-
+          path: .
       
 
