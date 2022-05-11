@@ -49,4 +49,13 @@
         - proxy
         - proxy_http
         - headers
-      
+        notify: restart apache2 service
+      - name: install mysql server
+        apt:
+          name: mysql-server
+          state: present
+    handlers:
+      - name: restart apache2 service
+        systemd:
+          state: restarted
+          name: apache2
