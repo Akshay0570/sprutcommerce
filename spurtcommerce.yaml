@@ -57,10 +57,13 @@
         apt:
           name: mysql-server
           state: present
-      - name: install python-mysqldb
+      - name: install python3-pip
         apt:
-          name: mysql-python
+          name: python3-pip
           state: present
+      - name: Install mysql-python using pip
+        pip:
+          name: PyMySQL
       #- name: switch to mysql root user
        # command:
         #  cmd: sudo mysql -u root
