@@ -19,9 +19,8 @@
         command:
           cmd: sh nodejs.sh
       - name: installing nodejs
-        apt:
-          name: nodejs
-          state: latest
+        command:
+          cmd: sudo apt install nodejs
       - name: installing build-essential 
         apt:
           name: build-essential 
