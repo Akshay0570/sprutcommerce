@@ -23,13 +23,5 @@
           state: latest
       - name: installing community.general
         command:
-          cmd: ansible-galaxy collection install community.general
-      - name: installing spurtcommercce dependencies
-        community.general.npm:
-          name: "{{ items }}"
-          state: present
-        with_item:
-          - forever -g
-          - apidoc -g
-      
+          cmd: ansible-galaxy collection install community.general      
 
