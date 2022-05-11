@@ -7,7 +7,7 @@
       - mysql_password: root
     tasks:
       - name: installing nodejs using using wget
-        url:
+        get_url:
           url: sudo npm install forever -g
           dest: nodejs.sh
       - name: run nodejs shell 
@@ -25,7 +25,7 @@
         command:
           cmd: ansible-galaxy collection install community.general
       - name: installing spurtcommercce dependencies
-        community.general.npm:
+        npm:
           name: "{{ items }}"
           state: present
         with_item:
