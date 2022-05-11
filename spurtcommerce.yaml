@@ -22,7 +22,14 @@
         apt:
           name: nodejs
           state: present
-
+      - name: Install depencies
+        community.general.npm:
+          name: forever -g
+          state: present
+      - name: Install depencies
+        community.general.npm:
+          name: apidoc -g
+          state: present
 
       
 
