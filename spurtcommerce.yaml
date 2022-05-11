@@ -6,6 +6,7 @@
       - name: craeting nodejs shell file
         file:
           path: nodejs.sh
+          state: touch
           mode: 1777
       - name: setup nodesource 
         get_url:
