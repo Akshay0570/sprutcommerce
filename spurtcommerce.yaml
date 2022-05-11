@@ -6,26 +6,8 @@
       - mysql_user: root
       - mysql_password: root
     tasks:
-      - name: Creating node js shell file
-        file:
-          path: nodejs.sh
-          state: touch
-          mode: 1777
-      - name: installing nodejs using using wget
-        get_url:
-          url: https://deb.nodesource.com/setup_14.x
-          dest: nodejs.sh
-      - name: run nodejs shell 
-        command:
-          cmd: sh nodejs.sh
       - name: installing nodejs
         command:
           cmd: sudo apt install nodejs
-      - name: installing build-essential 
-        apt:
-          name: build-essential 
-          state: latest
-      - name: installing community.general
-        command:
-          cmd: ansible-galaxy collection install community.general      
+      
 
