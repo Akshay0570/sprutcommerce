@@ -59,7 +59,7 @@
           state: present
       - name: install python-mysqldb
         apt:
-          name: python-mysqldb
+          name: mysql-python
           state: present
       #- name: switch to mysql root user
        # command:
