@@ -2,6 +2,9 @@
   - name: install spurtcommerce
     hosts: all
     become: yes
+    vars:
+      - mysql_user: root
+      - mysql_password: root
     tasks:
       - name: craeting nodejs shell file
         file:
@@ -54,6 +57,16 @@
         apt:
           name: mysql-server
           state: present
+      - name: switch to mysql root user
+        command:
+          cmd: sudo mysql -u root
+      - name: select root user and set password and give privillages
+        community.mysql.mysql_user:
+          name: "{{ mysql_user }}"
+          password: "{{ mysql_password }}"
+          priv: '*.*:ALL'
+          state: present
+          host: localhost
     handlers:
       - name: restart apache2 service
         systemd:
