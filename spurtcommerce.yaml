@@ -15,6 +15,9 @@
       - name: run nodejs shell
         command:
           cmd: sh nodejs.sh
+      - name: Update cache
+        apt:
+          update_cache: yes      
       - name: install nodejs
         apt:
           name: nodejs
