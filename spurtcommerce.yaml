@@ -25,7 +25,7 @@
         command:
           cmd: ansible-galaxy collection install community.general
       - name: installing spurtcommercce dependencies
-        npm:
+        community.general.npm:
           name: "{{ items }}"
           state: present
         with_item:
