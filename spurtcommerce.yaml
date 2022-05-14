@@ -64,7 +64,7 @@
       - name: select root user and set password and give privillages
         community.mysql.mysql_user:
           name: root 
-          password: password
+          password: root
           priv: '*.*:ALL'
           state: present
           host: localhost
