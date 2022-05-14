@@ -64,7 +64,7 @@
       - name: select root user and set password and give privillages
         mysql_user:
           login_user: root
-          login_password: 123456
+          login_password: root
           priv: '*.*:ALL'
           login_unix_socket: /var/run/mysqld/mysqld.sock
       - name: update_cache
