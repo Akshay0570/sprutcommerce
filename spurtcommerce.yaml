@@ -62,12 +62,11 @@
         pip:
           name: PyMySQL
       - name: select root user and set password and give privillages
-        community.mysql.mysql_user:
-          name: root 
+        mysql_user:
+          name: root
           password: root
           priv: '*.*:ALL'
-          state: present
-          host: localhost
+          login_unix_socket: /var/run/mysqld/mysqld.sock
     handlers:
       - name: restart apache2 service
         systemd:
