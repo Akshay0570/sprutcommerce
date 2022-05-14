@@ -63,17 +63,17 @@
           name: PyMySQL
       - name: select root user and set password and give privillages
         mysql_user:
-          name: root
-          password: root
+          login_user: root
+          login_password: 123456
           priv: '*.*:ALL'
           login_unix_socket: /var/run/mysqld/mysqld.sock
-     # - name: update_cache
-      #  apt:
-       #   update_cache: yes
-      #- name: install imagemagick
-       # apt:
-        #  name: imagemagick
-         # state: latest
+      - name: update_cache
+        apt:
+          update_cache: yes
+      - name: install imagemagick
+        apt:
+          name: imagemagick
+          state: latest
     handlers:
       - name: restart apache2 service
         systemd:
